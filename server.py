@@ -5,9 +5,9 @@ app.secret_key = 'keep it secret, keep it safe, hush hush!'
 @app.route('/')
 def counter():
     if 'counter' in session:
-        session['counter'] = session.get('counter') + 1
+        session['counter'] += 1
     else:
-        session['counter'] = 1
+        session['counter'] = 0
     return render_template("index.html")
 
 @app.route('/destroy')
