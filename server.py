@@ -24,12 +24,12 @@ def reset():
 @app.route('/plusTwo')
 def plusTwo():
     if 'counter' in session:
-        session['counter'] = session.get('counter') + 1
+        session['counter'] += 1
     return redirect("/")
 
 @app.route('/yourNumber', methods=['POST'])
 def yourNumber():
-    session['counter'] = session.get('counter') + int(request.form['yourNumber']) - 1
+    session['counter'] += int(request.form['yourNumber']) - 1
     return redirect("/")
 
 if __name__ == "__main__":
